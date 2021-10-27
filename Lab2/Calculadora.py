@@ -77,8 +77,8 @@ class Calculadora:
                 else:
                     parentesisAbiertos-=1
                     if i+1<n:
-                    # El siguiente de un parentesis cerrado solo puede ser un operador
-                        valid = self.is_operator(expresion[i+1])
+                    # El siguiente de un parentesis cerrado solo puede ser un operador o un parentesis cerrado
+                        valid = self.is_operator(expresion[i+1]) or expresion[i+1]==")"
             elif self.is_operator(m):
                 if i+1<n:
                     # El siguiente de un operador solo puede ser un numero o un parentesis abierto
